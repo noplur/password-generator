@@ -44,7 +44,37 @@ function generatePassword() {
       return;
     }
 
-
+  // generators choose password randomly from arrays
+  var password = ""
+  while(password.length < passLength) {
+    
+    if (hasNumbers === true) {
+      password = password + random(numChars)
+      if (password.length === passLength) {
+        break;
+      }
+    } 
+    if (hasSpecialchar === true) {
+        password = password + random(specialChars)
+        if (password.length === passLength) {
+          break;
+        }
+      }
+      
+    if (hasLowercase === true) {
+        password = password + random(lowerChars)
+        if (password.length === passLength) {
+          break;
+        }
+      }
+    if (hasUppercase === true) {
+        password = password + random(upperChars)
+        if (password.length === passLength) {
+          break;
+        }
+      }
+  }
+  
 // returns user the generated password
   return password;
 
