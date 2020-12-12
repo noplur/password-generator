@@ -32,6 +32,19 @@ function generatePassword() {
   console.log(passLength);
 
 
+    // alert if number of characters are within acceptable range
+  if (isNaN(passLength) === true) {
+      window.alert("Password length must be a number.");
+      return;
+      }
+    
+    // alert if number of characters are not within acceptable range
+  if (passLength < 8 || passLength > 128) {
+      window.alert("Password must be between 8 and 128 characters.");
+      return;
+    }
+
+
 // returns user the generated password
   return password;
 
