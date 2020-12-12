@@ -43,6 +43,18 @@ function generatePassword() {
       window.alert("Password must be between 8 and 128 characters.");
       return;
     }
+    
+    // confirm if user wants numbers, upper case letters, lower case letters and/or special characters in password
+      var hasNumbers = window.confirm("Do you want numbers in this password?");
+      var hasUppercase = window.confirm("Do you want upper case letters in this password?");
+      var hasLowercase = window.confirm("Do you want lower case letters in this password?");
+      var hasSpecialchar = window.confirm("Do you want special characters in this password?");
+    
+    // if user does not want any numbers, upper case letters, lower case letters or special characters in password
+      if (hasNumbers === false && hasUppercase === false && hasLowercase === false && hasSpecialchar === false) {
+        window.alert("You need at least 1 number, special character, upper case letter or lower case letter.")
+      return;
+      }
 
   // generators choose password randomly from arrays
   var password = ""
